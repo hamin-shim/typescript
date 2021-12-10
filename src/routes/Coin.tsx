@@ -233,21 +233,21 @@ function Coin() {
               <PriceContainer>
                 <p>
                   Market Cap: $
-                  {tickerData?.quotes.USD.market_cap.toLocaleString("en")}
+                  {tickerData?.quotes?.USD.market_cap.toLocaleString("en")}
                 </p>
                 <p>
-                  Date(ath) : {tickerData?.quotes.USD.ath_date.slice(0, 10)}
+                  Date(ath) : {tickerData?.quotes?.USD.ath_date.slice(0, 10)}
                 </p>
                 <p>
-                  Price(ath) : ${tickerData?.quotes.USD.ath_price.toFixed(3)}
+                  Price(ath) : ${tickerData?.quotes?.USD.ath_price.toFixed(3)}
                 </p>
                 <p>
                   Market Change (24h) :{" "}
-                  {tickerData?.quotes.USD.market_cap_change_24h}
+                  {tickerData?.quotes?.USD.market_cap_change_24h}
                 </p>
                 <p>
                   Market Change(ath):
-                  {tickerData?.quotes.USD.percent_from_price_ath}
+                  {tickerData?.quotes?.USD.percent_from_price_ath}
                 </p>
               </PriceContainer>
             </Route>
