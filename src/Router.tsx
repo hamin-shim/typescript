@@ -8,7 +8,7 @@ function Router({ toggleDark }: IRouterProps) {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/home">
+        <Route path="/typescript">
           <Coins toggleDark={toggleDark} />
         </Route>
         <Route path="/:coinId">

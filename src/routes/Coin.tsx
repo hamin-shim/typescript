@@ -255,7 +255,7 @@ function Coin() {
               <Chart coinId={coinId} />
             </Route>
           </Switch>
-          <GoBack onClick={() => history.push("/home")}> ← BACK</GoBack>
+          <GoBack onClick={() => history.push("/typescript")}> ← BACK</GoBack>
         </>
       )}
     </Container>

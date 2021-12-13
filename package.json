@@ -48,7 +48,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://alrbs10.github.io/typescript/home",
+  "homepage": "https://alrbs10.github.io/typescript/",
   "devDependencies": {
     "@types/react-router-dom": "^5.3.2",
     "@types/styled-components": "^5.1.16",
