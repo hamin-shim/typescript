@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
 import styled from "styled-components";
 import { fetchCoins } from "../api";
+import { isDarkAtom } from "../atoms";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -57,9 +59,7 @@ const Img = styled.img`
   margin-right: 10px;
 `;
 
-interface ICoinsProps {
-  toggleDark: () => void;
-}
+interface ICoinsProps {}
 
 const Toggle = styled.div`
   background-color: ${(props) => props.theme.tabColor};
@@ -74,13 +74,17 @@ const Toggle = styled.div`
     background-color: ${(props) => props.theme.reverseTabColor};
   }
 `;
-function Coins({ toggleDark }: ICoinsProps) {
+function Coins({}: ICoinsProps) {
   const { isLoading, data } = useQuery<CoinInterface[]>("allCoins", fetchCoins);
+  const setterFn = useSetRecoilState(isDarkAtom);
+  const toggleDarkAtom = () => {
+    setterFn((prev) => !prev);
+  };
   return (
     <Container>
       <Header>
         <Title>코인</Title>
-        <Toggle onClick={toggleDark}>Change Mode</Toggle>
+        <Toggle onClick={toggleDarkAtom}>Change Mode</Toggle>
       </Header>
       {isLoading ? (
         "Loading..."
